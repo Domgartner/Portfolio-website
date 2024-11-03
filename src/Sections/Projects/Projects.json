@@ -1,0 +1,154 @@
+[
+    {
+        "name": "Museum Database",
+        "tags": ["Database", "terminal-based"],
+        "video": "https://www.youtube.com/embed/fe2ocVFF82o",
+        "images": [
+            "MuseumDatabase/museum_db_design.jpg",
+            "MuseumDatabase/Museum-Database.jpg",
+            "MuseumDatabase/Python-MDB.jpg"
+        ],
+        "specs": {
+            "technologies": ["Python", "SQL"],
+            "dependencies": ["mysql.connector", "tabulate"],
+            "githubRepo": "https://github.com/Domgartner/Museum-Database-ENSF300"
+        },
+        "link": ""
+    },
+    {
+        "name": "Animal Shelter Scheduler",
+        "tags": ["Database", "GUI"],
+        "video": "https://www.youtube.com/embed/DkKywwAUwP4",
+        "images": [
+            "AnimalShelter/ex-schedule.jpg",
+            "AnimalShelter/380-code-snippet.jpg",
+            "AnimalShelter/380-UML.jpg"
+        ],
+        "specs": {
+            "technologies": ["Java", "SQL"],
+            "dependencies": ["mysql-connector-java", "java.sql"],
+            "githubRepo": "https://github.com/Domgartner/AnimalShelterScheduler"
+        },
+        "link": ""
+    },
+    {
+        "name": "Data Structures and Algorithms",
+        "video": "",
+        "images": [
+            "DSA/CDLL-ss.jpg",
+            "DSA/SLL-ss.jpg",
+            "DSA/Queue-ss.jpg"
+        ],
+        "specs": {
+            "technologies": ["Java"],
+            "dependencies": [],
+            "githubRepo": "https://github.com/Domgartner/ENSF338-FInalProject"
+        },
+        "link": ""
+    },
+    {
+        "name": "Wordle Clone",
+        "tags": ["Web"],
+        "video": "",
+        "images": [
+            "Wordle/wordle-ss.jpg"
+        ],
+        "specs": {
+            "technologies": ["JavaScript", "HTML", "CSS"],
+            "dependencies": [],
+            "githubRepo": "https://github.com/Domgartner/Wordle-clone"
+        },
+        "link": "https://domgartner-wordle.netlify.app/"
+    },
+    {
+        "name": "Notes App",
+        "tags": ["Cloud", "IaC", "Auth", "Web"],
+        "video": "",
+        "images": [
+            "Notes/lotion.jpg"
+        ],
+        "specs": {
+            "technologies": ["React", "Python", "Terraform", "AWS"],
+            "dependencies": [],
+            "githubRepo": "https://github.com/Domgartner/lotion"
+        },
+        "link": "https://lotion3014341930154504.netlify.app/"
+    },
+    {
+        "name": "Obituary Site",
+        "tags": ["Cloud", "API", "IaC", "Web"],
+        "video": "",
+        "images": [
+            "Obituary/obituary-outline.jpg",
+            "Obituary/obituary-backend.jpg",
+            "Obituary/obituary-ex.jpg",
+            "Obituary/populated-obituary.jpg"
+        ],
+        "specs": {
+            "technologies": ["React", "Python", "Terraform", "AWS", "Cloudinary", "ChatGPT API"],
+            "dependencies": [],
+            "githubRepo": "https://github.com/Domgartner/last-show-safe"
+        },
+        "link": ""
+    },
+    {
+        "name": "CommUNIcate",
+        "tags": ["Cloud", "Auth", "IaC", "Web"],
+        "video": "https://www.youtube.com/embed/11j8VmGNUJI",
+        "images": [
+            "CommUNIcate/Events.jpg",
+            "CommUNIcate/Diagram1.jpg",
+            "CommUNIcate/Diagram2.jpg",
+            "CommUNIcate/Friends.jpg",
+            "CommUNIcate/Schedule.jpg"
+        ],
+        "specs": {
+            "technologies": ["Next.js", "Google Firebase", "Tailwind CSS", "AWS", "Terraform"],
+            "dependencies": [],
+            "githubRepo": ""
+        },
+        "link": ""
+    },
+    {
+        "name": "Airline Application",
+        "tags": ["Database", "GUI"],
+        "video": "https://www.youtube.com/embed/byRK0fX2Bac",
+        "images": [
+            "AirlineApp/Admin.jpg",
+            "AirlineApp/UML.jpg",
+            "AirlineApp/Code.jpg",
+            "AirlineApp/Database.jpg",
+            "AirlineApp/GUI.jpg",
+            "AirlineApp/Running.jpg",
+            "AirlineApp/SignUp.jpg"
+        ],
+        "specs": {
+            "technologies": ["Java", "SQL"],
+            "dependencies": [
+                "java.sql",
+                "java.util",
+                "java.awt",
+                "java.io",
+                "javax.swing"
+            ],
+            "githubRepo": "https://github.com/Domgartner/AirlineApplication"
+        },
+        "link": ""
+    },
+    {
+        "name": "Automated Code Review + Refactoring Tool",
+        "tags": ["CI/CD"],
+        "video": "",
+        "images": [
+            "Misc/coming-soon.jpg"
+        ],
+        "specs": {
+            "technologies": [],
+            "dependencies": [
+
+            ],
+            "githubRepo": ""
+        },
+        "link": ""
+    }
+]

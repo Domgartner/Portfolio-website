@@ -1,0 +1,14 @@
+#signatureLine {
+    stroke-width: 6px;
+    stroke-dasharray: 1583.400390625px;
+    stroke-dashoffset: 1583.400390625px;
+    animation: lineAnimation 5s ease forwards;
+    animation-play-state: paused;
+}
+
+@keyframes lineAnimation {
+    to {
+        stroke-dashoffset: 0;
+    }
+    
+}

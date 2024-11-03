@@ -1,0 +1,69 @@
+[
+    {
+        "experience": [
+            {
+                "title": "October 2022",
+                "cardTitle": "Software Team Member",
+                "cardSubtitle": "Schulich Unmanned Aerial Vehicles (SUAV)",
+                "media": {
+                    "type": "IMAGE",
+                    "name": "SUAV",
+                    "source": {
+                        "url": "https://schulichuav.ca/assets/SUAVIconBlack-BJpUp1mW.jpg"
+                    }
+                },
+                "cardDetailedText": "Worked on a GCS system using a Python (Flask) backend communicating with an onboard Raspberry pi, connected using a RocketM5.\nDeveloped a manual detection system, allowing a user to easily select a target of interest and send the calculated spatial coordinates to a flight controller.\nWorked on extracting meta data from images and using a geolocation algorithm to determine ML detection locations."
+            },
+            {
+                "title": "May 2024",
+                "cardTitle": "Software Developer - Intern",
+                "cardSubtitle": "Bentley Canada (Seequent)",
+                "media": {
+                    "type": "IMAGE",
+                    "name": "Seequent",
+                    "source": {
+                        "url": "https://i0.wp.com/www.seequent.com/wp-content/uploads/Seequent-logo_charcoal-background-1200x600.jpg?fit=1200%2C600&ssl=1"
+                    }
+                },
+                "cardDetailedText":"C++ Desktop application development. Focused on developing a 3D CAD tool for geotechnical engineers. Focuses on computer graphics (VTK and Qt), inter-process API’s, software testing. Held the role of srum master. Scheduling, leading and coordinating daily scrum and inter-team scrum review meetings. Scrum and Iteration planning, bug estimations. Participated in build triage. Analysis of DevOps pipeline build failures. Investigation into solutions to fix these failures / timeouts."
+            },
+            {
+                "title": "July 2024",
+                "cardTitle": "Intelligent Systems Lead",
+                "cardSubtitle": "Schulich Unmanned Aerial Vehicles (SUAV)",
+                "media": {
+                    "type": "IMAGE",
+                    "name": "SUAV",
+                    "source": {
+                        "url": "https://schulichuav.ca/assets/SUAVIconBlack-BJpUp1mW.jpg"
+                    }
+                },
+                "cardDetailedText": "Designed an ML architecture for a YOLO algorithm from scratch for the task of detection, classification, and localization of objects. Designed an algorithm to calculate precise longitude and latitude coordinates of detected targets. Led a team of engineers to develop an accurate detection and classification system using tensorflow."
+            }
+        ],
+        "education": [
+            {
+                "Start Date": "September 2021",
+                "End Date": "May 2026",
+                "Institution": "University of Calgary",
+                "Degree": "BS in Software Engineering",
+                "Description": "",
+                "Achievements": [
+                    "GPA: 3.9/4.0",
+                    "Dean's List"
+                ]
+            }
+        ],
+        "certifications": [
+            {
+                "Title": "Tech Stewardship",
+                "DateIssued": "August 2022"
+            },
+            {
+                "Title": "TCPS 2: Core Research Ethics",
+                "DateIssued": "May 2022"
+            }
+            
+        ]
+    }
+]

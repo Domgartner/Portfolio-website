@@ -1,0 +1,226 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Project description headers (modal view) */
+.desc h2, .desc h3, .desc h4 {
+  color: var(--primary);
+}
+
+/* Custom scrollbar styles for dark mode */
+.dark ::-webkit-scrollbar {
+  width: 12px;
+}
+.dark ::-webkit-scrollbar-track {
+  background: var(--bg-accent);
+}
+.dark ::-webkit-scrollbar-thumb {
+  background-color: var(--border);
+  border-radius: 10px;
+  border: 3px solid var(--bg-accent);
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background-color: var(--primary);
+}
+
+:root {
+  --bg: #191e28;
+  --bg-accent: #1e232b;
+  --bg-accent2: #2d3748;
+  --bg-accent3: #15181b;
+  --container: #29313d;
+  --text: #d5d8dd;
+  --text-accent: #edf2f7;
+  --subtext: #a0aec0;
+  --border: #4a5568;
+  --primary: #2b6cb0;
+  --secondary: #2c5282;
+  --accent: #3182ce;
+  --success: #2f855a;
+  --error: #9f3a38;
+  --carousel-dot-color: gray;
+  --carousel-dot-selected-color: black;
+}
+
+.dark {
+    --carousel-dot-color: white;
+    --carousel-dot-selected-color: white;
+    --card-bg-color: #1e1e1e;
+    --card-fore-color: #e0e0e0;
+}
+/* ------------- DARK MODE COLOURS ------------- */
+
+.dark .desc p, .dark .desc ul li {
+  color: var(--text);
+}
+
+/* Selection Filters (Skill and About) */
+.dark .toggle{
+  color: var(--text-accent);
+}
+.dark .toggle:hover 
+{
+  color: var(--primary);
+}
+
+/* section title */
+.dark .sectionHead {
+  color: var(--text);
+}
+/* explanations below section title */
+.dark .subtext {
+  color: var(--text-accent);
+}
+/* explanations below the section subtext */
+.dark .subtextSub{ 
+  color: var(--subtext);
+}
+
+/* Skill Name (on Hover) */
+.dark .SkillName {
+  color: var(--text);
+}
+/* Skill Description (on Hover) */
+.dark .SkillDesc {
+  color: var(--subtext);
+}
+
+/* Project container (Carousel view) */
+.dark .projectCont {
+  background-color: var(--bg-accent);
+  border-color: var(--border);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* Project Name (Carousel view) */
+.dark .projName {
+  color: var(--text);
+}
+/* Project Background (Modal view) */
+.dark .projModalbg {
+  background-color: var(--bg-accent);
+  border-color: var(--border);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* Project Specs (Modal view) */
+.dark .specsCont {
+  background-color: var(--bg-accent3);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Project pagination bullets in dark view (Modal view) */
+.dark .swiper-pagination-bullet {
+  background-color: white;
+  border: 2px solid rgb(255, 255, 255); 
+  opacity: 0.8; 
+}
+.dark .swiper-pagination-bullet-active {
+  background-color: rgb(41, 110, 213); 
+  border: 2px solid rgb(41, 110, 213);
+  opacity: 1; 
+}
+
+/* Specs lower title (dependencies, technologies) */
+.dark .specsSemiTitle {
+  color: var(--accent);
+}
+/* Specs title */
+.dark .specsTitle {
+  color: var(--primary);
+}
+/* Specs content */
+.dark .specsCont p, 
+.dark .specsCont ul li {
+  color: var(--text);
+}
+/* Project descrptions (Modal view) */
+.dark .desc h3, 
+.dark .desc h4, 
+.dark .desc h2 {
+  color: var(--primary);
+}
+
+/* About me container */
+.dark .AboutCont {
+  background-color: var(--bg-accent);
+  border-color: var(--border);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* Certification item */
+.dark .certification {
+  background-color: var(--bg-accent2);
+  border-color: var(--border);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* Education item */
+.dark .educLogo {
+  background-color: var(--bg-accent);
+  border-color: var(--border);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* Name of degree in education section */
+.dark .EducTitle {
+  color: var(--text);
+}
+/* Name of Institution in education section */
+.dark .InstitutionName {
+  color: var(--text-accent);
+}
+.Chrono button:focus {
+  outline: none;
+}
+
+/* Contact input form */
+.dark .form {
+  background-color: var(--bg);
+  border-color: var(--border);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* form input fields */
+.dark .formInput {
+  background-color: var(--bg);
+  color: var(--text);
+  border-color: var(--border);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* Form labels (name, email, subject) */
+.dark .formLabel {
+  color: var(--text);
+  background-color: var(--bg);
+}
+
+.dark .main #about,
+.dark .main #skills,
+.dark .main #projects {
+  background-color: var(--bg) !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hello, my name is... */
+.dark .homeIntro {
+  color: var(--text);
+}
+/* My name */
+.dark .homeName {
+  color: var(--text);
+}
+/* Words typed out by character */
+.dark .typedWord {
+  color: var(--primary);
+}
+/* Down Arrow in home section */
+.dark .downArrow {
+  color: var(--text);
+}
+
+/* font-awesome icons */
+.dark .fa-icon {
+  color: var(--text);
+}
+
+/* text in various parts of site (About me, contact, etc.) */
+.dark .innertxt {
+  color: var(--text);
+}
+
+

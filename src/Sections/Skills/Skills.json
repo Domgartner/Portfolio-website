@@ -1,0 +1,149 @@
+[
+	{
+		"Name": "C / C++",
+		"Description": "Experienced in C/C++ and OOP principles. Experience in graphics, desktop application, and API development",
+		"icon": "faC",
+        "color": "#A8B9CC",
+		"category": "languages"
+	},
+	{
+		"Name": "Python",
+		"Description": "Experienced in using Python for data analysis, machine learning, and backend development.",
+		"icon": "faPython",
+        "color": "#306998",
+		"category": "languages"
+	},
+	{
+		"Name": "SQL",
+		"Description": "Proficient in database architecture and writing queries for data manipulation and retrieval.",
+		"icon": "faDatabase",
+        "color": "#00758F",
+		"category": "languages"
+	},
+	{
+		"Name": "Java",
+		"Description": "Skilled in building robust and scalable applications using Java.",
+		"icon": "faJava",
+        "color": "#e31414",
+		"category": "languages"
+	},
+	{
+		"Name": "JavaScript",
+		"Description": "Experienced in JavaScript for web applications and game development.",
+		"icon": "faJs",
+        "color": "#F0DB4F",
+		"category": "languages"
+	},
+	{
+		"Name": "React",
+		"Description": "Proficient in building modern web applications using React.",
+		"icon": "faReact",
+        "color": "#61DAFB",
+		"category": "technologies"
+	},
+	{
+		"Name": "Google Firebase",
+		"Description": "Experienced in building real-time applications using Firebase.",
+		"icon": "faFire",
+        "color": "#FFA611",
+		"category": "technologies"
+	},
+	{
+		"Name": "Docker",
+		"Description": "Experienced in containerizing applications using Docker.",
+		"icon": "faDocker",
+        "color": "#2496ED",
+		"category": "technologies"
+	},
+	{
+		"Name": "Kubernetes",
+		"Description": "Experienced in managing containerized applications using Kubernetes.",
+		"icon": "faBox",
+        "color": "#326CE5",
+		"category": "technologies"
+	},
+	{
+		"Name": "Git",
+		"Description": "Experienced in version control using Git.",
+		"icon": "faGithub",
+        "color": "#F1502F",
+		"category": "technologies"
+	},
+	{
+		"Name": "Figma",
+		"Description": "Experience designing in Figma.",
+		"icon": "faFigma",
+        "color": "#F24E1E",
+		"category": "technologies"
+	},
+	{
+		"Name": "Unity",
+		"Description": "Experience in developing 2D and 3D games using Unity.",
+		"icon": "faUnity",
+        "color": "#000000",
+		"category": "technologies"
+	},
+    {
+		"Name": "Terraform",
+        "Description": "Experienced in infrastructure as code (IaC) using Terraform for provisioning and managing cloud resources.",
+		"icon": "faCloud",
+        "color": "#5C4EE8",
+		"category": "languages"
+	},
+    {
+		"Name": "AWS",
+        "Description": "Experienced in deploying and managing applications on AWS. Including EC2, S3, Lambda, API Gateway, Polly, Parameter Store, DynamoDB.",
+		"icon": "faAws",
+        "color": "#FF9900",
+		"category": "technologies"
+	},
+	{
+		"Name": "HTML/CSS",
+        "Description": "Experienced in building responsive web applications using HTML and CSS.",
+		"icon": "faHtml5",
+        "color": "#E34F26",
+		"category": "languages"
+	},
+	{
+		"Name": "Computer Vision",
+        "Description": "Interested (with some experience) in computer vision, image processing, and machine learning.",
+		"icon": "faBullseye",
+        "color": "#FFA500",
+		"category": "other"
+	},
+	{
+		"Name": "Software Architecture and Design",
+        "Description": "Strong fundamentals in software architecture and design principles.",
+		"icon": "faDiagramProject",
+        "color": "#FFD700",
+		"category": "other"
+	},
+	{
+		"Name": "Next.js",
+        "Description": "Experienced in building modern web applications using Next.js.",
+		"icon": "faDesktop",
+        "color": "#000000",
+		"category": "technologies"
+	},
+	{
+		"Name": "RISC-V Assembly",
+        "Description": "Some Experience writing programs, and converting C code, in RISC-V assembly language.",
+		"icon": "faMicrochip",
+        "color": "#FF0000",
+		"category": "languages"
+	},
+	{
+		"Name": "Computer Graphics",
+        "Description": "Basic undertanding of computer graphics and OpenGL. Experience working with VTK and Qt.",
+		"icon": "faCube",
+        "color": "#FF4500",
+		"category": "other"
+	},
+	{
+		"Name": "Software Testing",
+        "Description": "Experience in software testing, including unit testing, integration testing, regression testing, and end-to-end testing.",
+		"icon": "faVialCircleCheck",
+        "color": "#32CD32",
+		"category": "other"
+	}
+]
