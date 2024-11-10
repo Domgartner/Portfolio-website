@@ -38,7 +38,7 @@ function Break() {
                         setAnimationTriggered(true); // Mark animation as triggered
                         setTimeout(() => {
                             setGpa(0.01); // Start the GPA count-up from 0.01
-                        }, 300);
+                        }, 320);
                     }
                 });
             },
@@ -59,7 +59,7 @@ function Break() {
     return (
         <section
             ref={sectionRef}
-            className="relative h-[500px] md:h-[300px] lg:h-[300px] bg-fixed bg-cover bg-center flex items-center"
+            className="relative h-[500px] md:h-[300px] lg:h-[300px] bg-fixed bg-cover bg-center flex items-center overflow-hidden"
             style={{ backgroundImage: `url(${bg})` }}
         >
             {/* Dark overlay */}
@@ -68,7 +68,7 @@ function Break() {
             <div className="relative grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-6xl mx-auto text-center text-white">
                 <div
                     className={`flex flex-col items-center transform transition-transform duration-700 ${
-                        inView ? 'translate-x-0' : '-translate-x-full'
+                        inView ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'
                     }`}
                 >
                     <FontAwesomeIcon icon={faLaptopCode} className="text-5xl mb-2" />
@@ -83,7 +83,7 @@ function Break() {
                 </div>
                 <div
                     className={`flex flex-col items-center transform transition-transform duration-700 ${
-                        inView ? 'translate-x-0' : 'translate-x-full'
+                        inView ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
                     }`}
                 >
                     <FontAwesomeIcon icon={faGraduationCap} className="text-5xl mb-2" />

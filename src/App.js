@@ -6,12 +6,15 @@ import Skills from './Sections/Skills/Skills';
 import Break from './Sections/Break/Break';
 import Projects from './Sections/Projects/Projects';
 import Contact from './Sections/Contact/Contact';
+import ScrollToTop from './Components/ScrollToTop'; // Import ScrollToTop component
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 function App() {
   const [darkMode, setDarkMode] = useState(localStorage.getItem('darkMode') === 'true' ? true : false);
   const [activeSection, setActiveSection] = useState('');
+  const markerRef = useRef(null); // Marker for observing scroll position
+
 
   // Toggle dark mode
   const handleToggle = () => {
@@ -37,49 +40,43 @@ function App() {
     <div className="App">
       <header>
         <Nav 
-        darkMode={darkMode}
-        handleToggle={handleToggle}
-        activeSection={activeSection}
-        setActiveSection={setActiveSection}
+          darkMode={darkMode}
+          handleToggle={handleToggle}
+          activeSection={activeSection}
+          setActiveSection={setActiveSection}
         />
       </header>
 
       <div className='main'>
+      <div ref={markerRef} style={{ position: 'absolute', top: 100 }} />
         <div className='home'>
-            <Home 
-            darkMode={darkMode}
-            />
+          <Home darkMode={darkMode} />
         </div>
         <div className='bg-base'>
-          <About 
-           darkMode={darkMode}
-          />
+          <About darkMode={darkMode} />
         </div>
         <div className='bg-base'>
-          <Skills 
-          darkMode={darkMode}
-          />
+          <Skills darkMode={darkMode} />
         </div>
         <div>
           <Break />
         </div>
         <div className='bg-base'>
-          <Projects 
-           darkMode={darkMode}
-          />
+          <Projects darkMode={darkMode} />
         </div>
         <div className='bg-base'>
-          <Contact 
-            activeSection={activeSection}
-          />
+          <Contact activeSection={activeSection} />
         </div>
       </div>
 
-      <footer className="bg-gray-800 text-white text-center py-4 pt-8">
+      <footer className="bg-gray-800 text-white text-center py-4 pt-4">
         <br />
         <p>Copyright ©2024 Dominic Gartner</p>
         <br />
       </footer>
+
+      {/* Scroll to Top Button */}
+      <ScrollToTop scrollToHome={scrollToHome} darkMode={darkMode} markerRef={markerRef}/>
     </div>
   );
 }

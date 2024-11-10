@@ -18,9 +18,50 @@ function About({darkMode}) {
     const [cer, setCer] = useState([]);
     const [glowIntensity, setGlowIntensity] = useState(0);
     const backgroundTextRef = useRef(null);
-
     const [containerWidth, setContainerWidth] = useState(0);
     const containerRef = useRef(null);
+    const [isInView, setIsInView] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsInView(entry.isIntersecting);
+            },
+            { threshold: 0.1 } // Adjust threshold to control how much of the element must be visible
+        );
+
+        if (backgroundTextRef.current) {
+            observer.observe(backgroundTextRef.current);
+        }
+
+        return () => {
+            if (backgroundTextRef.current) {
+                observer.unobserve(backgroundTextRef.current);
+            }
+        };
+    }, []);
+
+    useEffect(() => {
+        if (!isInView) return;
+
+        const handleScroll = () => {
+            if (!backgroundTextRef.current) return;
+
+            const rect = backgroundTextRef.current.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+            const distanceFromTop = Math.max(0, rect.top);
+            const maxDistance = viewportHeight;
+            const normalizedDistance = Math.min(distanceFromTop / maxDistance, 1);
+            const intensity = 1 - normalizedDistance;
+
+            setGlowIntensity(intensity);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        handleScroll(); // Initial call to set the initial glow intensity
+
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [isInView]); // Only run when the section is in view
 
     useEffect(() => {
         // Update the width initially and on window resize
@@ -37,28 +78,6 @@ function About({darkMode}) {
             window.removeEventListener('resize', updateWidth);
         };
     }, []);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            if (!backgroundTextRef.current) return;
-    
-            const rect = backgroundTextRef.current.getBoundingClientRect();
-            const viewportHeight = window.innerHeight;
-            // Calculate the distance from the top of the viewport
-            const distanceFromTop = Math.max(0, rect.top); // Ensure it doesn't go below zero
-            const maxDistance = viewportHeight;
-            // Normalize the distance to a value between 0 and 1
-            const normalizedDistance = Math.min(distanceFromTop / maxDistance, 1);
-            // Invert it to make glow stronger when closer to the top
-            const intensity = 1 - normalizedDistance;
-            // Set the glow intensity based on the position
-            setGlowIntensity(intensity);
-        };
-        window.addEventListener("scroll", handleScroll);
-        handleScroll(); // Initial call to set the initial glow intensity
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-
 
     const handleFilterChange = (newFilter) => {
         setFilter(newFilter);
@@ -78,7 +97,7 @@ function About({darkMode}) {
     }, []);
 
     return (
-        <section className="p-16 w-screen" id="about">
+        <section className="p-8 lg:p-16 w-screen" id="about">
             <div className="text-center mb-8">
                 <div className="relative">
                    {/* Background Text with Dynamic Glow */}
@@ -176,7 +195,7 @@ function About({darkMode}) {
                         showAllCardsHorizontal={containerWidth > 640}
                         scrollable={true}
                         textOverlay
-                        cardWidth={containerWidth <= 640 ? 200 : containerWidth / 5}
+                        cardWidth={containerWidth <= 640 ? 450 : containerWidth / 5}
                         cardHeight={300}
                         itemWidth={containerWidth > 640 ? containerWidth / 2 : containerWidth * 0.9}
                         disableToolbar={true}

@@ -12,32 +12,52 @@ function Skills({darkMode}) {
     const [isAnimating, setIsAnimating] = useState(false);
     const [glowIntensity, setGlowIntensity] = useState(0);
     const backgroundTextRef = useRef(null);
+    const [isInView, setIsInView] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsInView(entry.isIntersecting);
+            },
+            { threshold: 0.1 } // Adjust threshold to control how much of the element must be visible
+        );
+
+        if (backgroundTextRef.current) {
+            observer.observe(backgroundTextRef.current);
+        }
+
+        return () => {
+            if (backgroundTextRef.current) {
+                observer.unobserve(backgroundTextRef.current);
+            }
+        };
+    }, []);
+
+    useEffect(() => {
+        if (!isInView) return;
+
+        const handleScroll = () => {
+            if (!backgroundTextRef.current) return;
+
+            const rect = backgroundTextRef.current.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+            const distanceFromTop = Math.max(0, rect.top);
+            const maxDistance = viewportHeight;
+            const normalizedDistance = Math.min(distanceFromTop / maxDistance, 1);
+            const intensity = 1 - normalizedDistance;
+
+            setGlowIntensity(intensity);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        handleScroll(); // Initial call to set the initial glow intensity
+
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [isInView]); // Only run when the section is in view
 
     useEffect(() => {
         setSkillsData(SkillsDataJson);
     }, []);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            if (!backgroundTextRef.current) return;
-    
-            const rect = backgroundTextRef.current.getBoundingClientRect();
-            const viewportHeight = window.innerHeight;
-            // Calculate the distance from the top of the viewport
-            const distanceFromTop = Math.max(0, rect.top); // Ensure it doesn't go below zero
-            const maxDistance = viewportHeight;
-            // Normalize the distance to a value between 0 and 1
-            const normalizedDistance = Math.min(distanceFromTop / maxDistance, 1);
-            // Invert it to make glow stronger when closer to the top
-            const intensity = 1 - normalizedDistance;
-            // Set the glow intensity based on the position
-            setGlowIntensity(intensity);
-        };
-        window.addEventListener("scroll", handleScroll);
-        handleScroll(); // Initial call to set the initial glow intensity
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-    
 
     const iconMap = {
         faDatabase,
@@ -86,7 +106,7 @@ function Skills({darkMode}) {
                         className="glow-effect text-[3.7rem] non-selectable font-bold text-gray-500 dark:text-blue-800 absolute top-9 left-1/2 transform -translate-x-1/2 -translate-y-1/2 whitespace-nowrap"
                         style={{
                             filter: `brightness(${0.5 + glowIntensity * 1.5})`, // Adjust the brightness based on scroll
-                            opacity: 0.2 + glowIntensity * 0.4, // Increase opacity as it scrolls to the top
+                            opacity: darkMode ? 0.2 + glowIntensity * 0.4 : 0.2 + glowIntensity * 0.7, // Increase opacity as it scrolls to the top
                             textShadow: darkMode ? `10px 15px 12px rgba(19, 88, 237, ${glowIntensity})` : `16px 22px 16px rgba(12, 12, 12, ${glowIntensity})`
                         }}
                     >

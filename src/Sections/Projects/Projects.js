@@ -24,6 +24,48 @@ function Projects({darkMode}) {
     const containerRef = useRef(null);
     const [glowIntensity, setGlowIntensity] = useState(0);
     const backgroundTextRef = useRef(null);
+    const [isInView, setIsInView] = useState(false);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsInView(entry.isIntersecting);
+            },
+            { threshold: 0.1 } // Adjust threshold to control how much of the element must be visible
+        );
+
+        if (backgroundTextRef.current) {
+            observer.observe(backgroundTextRef.current);
+        }
+
+        return () => {
+            if (backgroundTextRef.current) {
+                observer.unobserve(backgroundTextRef.current);
+            }
+        };
+    }, []);
+
+    useEffect(() => {
+        if (!isInView) return;
+
+        const handleScroll = () => {
+            if (!backgroundTextRef.current) return;
+
+            const rect = backgroundTextRef.current.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+            const distanceFromTop = Math.max(0, rect.top);
+            const maxDistance = viewportHeight;
+            const normalizedDistance = Math.min(distanceFromTop / maxDistance, 1);
+            const intensity = 1 - normalizedDistance;
+
+            setGlowIntensity(intensity);
+        };
+
+        window.addEventListener("scroll", handleScroll);
+        handleScroll(); // Initial call to set the initial glow intensity
+
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [isInView]); // Only run when the section is in view
 
     const descriptions = {
         'Museum Database': MuseumDatabaseDescription,
@@ -39,27 +81,6 @@ function Projects({darkMode}) {
     const handleProjectClick = (isExpanded) => {
         setIsAnyProjectExpanded(isExpanded);
     };
-
-    useEffect(() => {
-        const handleScroll = () => {
-            if (!backgroundTextRef.current) return;
-    
-            const rect = backgroundTextRef.current.getBoundingClientRect();
-            const viewportHeight = window.innerHeight;
-            // Calculate the distance from the top of the viewport
-            const distanceFromTop = Math.max(0, rect.top); // Ensure it doesn't go below zero
-            const maxDistance = viewportHeight;
-            // Normalize the distance to a value between 0 and 1
-            const normalizedDistance = Math.min(distanceFromTop / maxDistance, 1);
-            // Invert it to make glow stronger when closer to the top
-            const intensity = 1 - normalizedDistance;
-            // Set the glow intensity based on the position
-            setGlowIntensity(intensity);
-        };
-        window.addEventListener("scroll", handleScroll);
-        handleScroll(); // Initial call to set the initial glow intensity
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
 
     useEffect(() => {
         const calculateSlides = () => {
