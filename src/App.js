@@ -6,7 +6,8 @@ import Skills from './Sections/Skills/Skills';
 import Break from './Sections/Break/Break';
 import Projects from './Sections/Projects/Projects';
 import Contact from './Sections/Contact/Contact';
-import ScrollToTop from './Components/ScrollToTop'; // Import ScrollToTop component
+import ScrollToTop from './Components/ScrollToTop';
+
 
 import React, { useState, useEffect, useRef } from 'react';
 

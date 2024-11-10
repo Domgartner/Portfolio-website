@@ -142,22 +142,5 @@
             "githubRepo": "https://github.com/Domgartner/AirlineApplication"
         },
         "link": ""
-    },
-    {
-        "name": "Automated Code Review + Refactoring Tool",
-        "tags": ["CI/CD"],
-        "Date": "",
-        "video": "",
-        "images": [
-            "Misc/coming-soon.jpg"
-        ],
-        "specs": {
-            "technologies": [],
-            "dependencies": [
-
-            ],
-            "githubRepo": ""
-        },
-        "link": ""
     }
 ]

@@ -105,8 +105,8 @@ function About({darkMode}) {
                         ref={backgroundTextRef}
                         className="glow-effect text-[3.7rem] non-selectable font-bold text-gray-500 dark:text-blue-800 absolute top-9 left-1/2 transform -translate-x-1/2 -translate-y-1/2 whitespace-nowrap"
                         style={{
-                            filter: `brightness(${0.5 + glowIntensity * 1.5})`, // Adjust the brightness based on scroll
-                            opacity: 0.2 + glowIntensity * 0.4, // Increase opacity as it scrolls to the top
+                            filter: `brightness(${0.5 + glowIntensity * 1.5})`,
+                            opacity: darkMode ? 0.2 + glowIntensity * 0.4 : 0 + glowIntensity * 0.8,
                             textShadow: darkMode ? `10px 15px 12px rgba(19, 88, 237, ${glowIntensity})` : `16px 22px 16px rgba(12, 12, 12, ${glowIntensity})`
                         }}
                     >
@@ -115,7 +115,10 @@ function About({darkMode}) {
                     {/* Foreground Text */}
                     <h3 className="sectionHead text-[3.7rem] font-bold relative z-10 text-black whitespace-nowrap">A B O U T</h3>
                 </div>
-                <hr className='mt-2 mb-4 border-blue-500 border-2 w-1/6 mx-auto'></hr>
+                <hr 
+                    className='mt-2 mb-4 border-blue-500 border-2 mx-auto transition-all duration-300' 
+                    style={{ width: `${10 + glowIntensity * 20}%` }}
+                ></hr>
             </div>
             {/* /* Filters at the top */}
             <div className="mb-4 text-center">

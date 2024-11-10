@@ -19,7 +19,7 @@ export default {
       colors: {
         'homeContact': '#edeef0',
         'base': '#f9fafb',
-      }
+      },
     },
   },
   variants: {
