@@ -231,10 +231,10 @@ function About({darkMode}) {
                                         />
                                         {/* Content Overlay */}
                                         <div className="relative z-10">
-                                            <h4 className="EducTitle InstitutionName text-xl font-semibold mb-2 transition-opacity duration-300 group-hover:opacity-0">
+                                            <h4 className="font-bold EducTitle InstitutionName text-xl font-semibold mb-2 transition-opacity duration-300 group-hover:opacity-0">
                                                 {edu.Institution}
                                             </h4>
-                                            <p className="EducTitle text-gray-600 mb-1 transition-opacity duration-300 group-hover:opacity-0">
+                                            <p className="font-semibold EducTitle text-gray-600 mb-1 transition-opacity duration-300 group-hover:opacity-0">
                                                 {edu.Degree}
                                             </p>
                                             <p className="EducTitle text-gray-500 mb-2 transition-opacity duration-300 group-hover:opacity-0">
@@ -259,7 +259,7 @@ function About({darkMode}) {
                             <ul className="w-full max-w-full-md mx-auto space-y-4">
                                 {cer.map((cert, index) => (
                                     <li key={index} className="certification bg-gray-100 p-4 border border-gray-300 rounded-lg shadow-md">
-                                        <h4 className="EducTitle text-lg font-semibold mb-1">{cert.Title}</h4>
+                                        <h4 className="EducTitle text-lg font-bold mb-1">{cert.Title}</h4>
                                         <p className="EducTitle text-gray-600">{cert.DateIssued}</p>
                                     </li>
                                 ))}

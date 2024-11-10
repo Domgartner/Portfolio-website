@@ -24,10 +24,10 @@ function Skill({ Name, Description, icon, color, isAnimating }) {
             />
             {hovered && (
                 <div className="absolute flex flex-col items-center text-center transition-opacity duration-300">
-                    <span className="SkillName text-2xl font-semibold text-gray-700 dark:text-gray-300 mb-2">
+                    <span className="SkillName text-2xl font-bold text-gray-700 dark:text-gray-300 mb-2">
                         <b>{Name}</b>
                     </span>
-                    <span className="SkillDesc text-lg text-gray-500 dark:text-gray-400">
+                    <span className="SkillDesc text-lg font-semibold text-gray-500 dark:text-gray-400">
                         {Description}
                     </span>
                 </div>

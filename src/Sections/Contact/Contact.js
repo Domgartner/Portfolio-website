@@ -137,15 +137,15 @@ function Contact({ activeSection }) {
                 <div className="space-y-4">
                     <div className="flex items-center text-gray-600">
                         <FontAwesomeIcon icon={faLocationDot} className="fa-icon mr-3 text-xl" />
-                        <span className="innertxt text-lg">Calgary, Alberta, Canada</span>
+                        <span className="font-semibold innertxt text-lg">Calgary, Alberta, Canada</span>
                     </div>
                     <div className="flex items-center text-gray-600">
                         <FontAwesomeIcon icon={faPhone} className="fa-icon mr-3 text-xl" />
-                        <span className="innertxt text-lg">403-472-9927</span>
+                        <span className="font-semibold innertxt text-lg">403-472-9927</span>
                     </div>
                     <div className="flex items-center text-gray-600">
                         <FontAwesomeIcon icon={faEnvelope} className="fa-icon mr-3 text-xl" />
-                        <span className="innertxt text-lg">dominicgartner1@gmail.com</span>
+                        <span className="font-semibold innertxt text-lg">dominicgartner1@gmail.com</span>
                     </div>
                 </div>
                 <div className="mt-6 flex space-x-6">
@@ -171,7 +171,7 @@ function Contact({ activeSection }) {
                         />
                         <label 
                             htmlFor="name" 
-                            className={`formLabel absolute left-3 transition-all duration-200 ease-in-out bg-white px-1
+                            className={`font-semibold formLabel absolute left-3 transition-all duration-200 ease-in-out bg-white px-1
                             ${formData.name ? '-top-2 text-xs' : 'top-3 text-sm'} peer-focus:-top-2 peer-focus:text-xs`}>
                             Name:
                         </label>
@@ -187,7 +187,7 @@ function Contact({ activeSection }) {
                         />
                         <label 
                             htmlFor="email" 
-                            className={`formLabel absolute left-3 transition-all duration-200 ease-in-out bg-white px-1
+                            className={`font-semibold formLabel absolute left-3 transition-all duration-200 ease-in-out bg-white px-1
                             ${formData.email ? '-top-2 text-xs' : 'top-3 text-sm'} peer-focus:-top-2 peer-focus:text-xs`}>
                             Email:
                         </label>
@@ -203,7 +203,7 @@ function Contact({ activeSection }) {
                         />
                         <label 
                             htmlFor="subject" 
-                            className={`formLabel absolute left-3 transition-all duration-200 ease-in-out bg-white px-1
+                            className={`font-semibold formLabel absolute left-3 transition-all duration-200 ease-in-out bg-white px-1
                             ${formData.subject ? '-top-2 text-xs' : 'top-3 text-sm'} peer-focus:-top-2 peer-focus:text-xs`}>
                             Subject:
                         </label>

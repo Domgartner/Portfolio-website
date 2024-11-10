@@ -92,10 +92,10 @@ function ProjectModal({ isVisible, closeModal, Name, images, specs, Description,
                                             </div>
                                             {/* Specs */}
                                             <div className="specsCont mt-4 bg-gray-200 p-4 rounded-lg shadow-md w-full">
-                                                <h3 className="specsTitle font-semibold text-xl text-center">Specs:</h3>
+                                                <h3 className="specsTitle font-bold text-xl text-center">Specs:</h3>
                                                 <div className="flex mb-2">
                                                     <div className="flex-1">
-                                                        <h4 className="specsSemiTitle font-semibold">Technologies:</h4>
+                                                        <h4 className="specsSemiTitle font-bold">Technologies:</h4>
                                                         <ul className="list-disc ml-4">
                                                             {specs.technologies.map((tech, index) => (
                                                                 <li key={index}>{tech}</li>
@@ -104,7 +104,7 @@ function ProjectModal({ isVisible, closeModal, Name, images, specs, Description,
                                                     </div>
                                                     {specs.dependencies.length > 0 && (
                                                         <div className="flex-1">
-                                                            <h4 className="specsSemiTitle font-semibold">Dependencies:</h4>
+                                                            <h4 className="specsSemiTitle font-bold">Dependencies:</h4>
                                                             <ul className="list-disc ml-4">
                                                                 {specs.dependencies.map((dep, index) => (
                                                                     <li key={index}>{dep}</li>
@@ -176,10 +176,10 @@ function ProjectModal({ isVisible, closeModal, Name, images, specs, Description,
                                                 )}
 
                                                 <div className="specsCont mt-4 bg-gray-200 p-4 rounded-lg shadow-md min-h-[268px]">
-                                                    <h3 className="specsTitle font-semibold text-xl mb-4 text-center">Specs:</h3>
+                                                    <h3 className="specsTitle font-bold text-xl mb-4 text-center">Specs:</h3>
                                                     <div className="flex mb-4">
                                                         <div className="flex-1">
-                                                            <h4 className="specsSemiTitle font-semibold">Technologies:</h4>
+                                                            <h4 className="specsSemiTitle font-bold">Technologies:</h4>
                                                             <ul className="list-disc ml-4">
                                                                 {specs.technologies.map((tech, index) => (
                                                                     <li key={index}>{tech}</li>
@@ -188,7 +188,7 @@ function ProjectModal({ isVisible, closeModal, Name, images, specs, Description,
                                                         </div>
                                                         {specs.dependencies.length > 0 && (
                                                             <div className="flex-1">
-                                                                <h4 className="specsSemiTitle font-semibold">Dependencies:</h4>
+                                                                <h4 className="specsSemiTitle font-bold">Dependencies:</h4>
                                                                 <ul className="list-disc ml-4">
                                                                     {specs.dependencies.map((dep, index) => (
                                                                         <li key={index}>{dep}</li>

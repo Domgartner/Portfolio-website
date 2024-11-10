@@ -70,7 +70,7 @@ function Projects({darkMode}) {
     const descriptions = {
         'Museum Database': MuseumDatabaseDescription,
         'Animal Shelter Scheduler': AnimalShelterSchedulerDescription,
-        'Data Structures and Algorithms': DSADescription,
+        'DSA': DSADescription,
         'Wordle Clone': WordleCloneDescription,
         'Notes App': NotesDescription,
         'Obituary Site': ObituarySiteDescription,
