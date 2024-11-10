@@ -71,7 +71,7 @@ function Project({ Name, Description, Video, images, specs, tags, date, link, is
         <>
             {/* The carousel item (small view) */}
             <div
-                className="projectCont p-6 border rounded-lg shadow-xl mb-12 w-80 h-80 hover:shadow-2xl hover:scale-105 transition-transform duration-300 ease-in-out"
+                className="bg-white projectCont p-6 border rounded-lg shadow-xl mb-12 w-80 h-80 hover:shadow-2xl hover:scale-105 transition-transform duration-300 ease-in-out"
                 style={{ cursor: 'pointer' }}
                 onClick={!isExpanded && !isAnyProjectExpanded ? () => {
                     handleClick();
@@ -101,7 +101,7 @@ function Project({ Name, Description, Video, images, specs, tags, date, link, is
                         })
                     )}
                     {date && (
-                        <span className="text-gray-600 text-sm font-semibold ml-auto dark:text-white">
+                        <span className="text-gray-600 text-sm font-bold ml-auto dark:text-white">
                             {date}
                         </span>
                     )}

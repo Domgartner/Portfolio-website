@@ -34,6 +34,7 @@
   --text-accent: #edf2f7;
   --subtext: #a0aec0;
   --border: #4a5568;
+  --contact-border: #8596b4;
   --primary: #2b6cb0;
   --secondary: #2c5282;
   --accent: #3182ce;
@@ -173,14 +174,14 @@
 /* Contact input form */
 .dark .form {
   background-color: var(--bg);
-  border-color: var(--border);
+  border-color: black;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 /* form input fields */
 .dark .formInput {
   background-color: var(--bg);
   color: var(--text);
-  border-color: var(--border);
+  border-color: var(--contact-border);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 /* Form labels (name, email, subject) */

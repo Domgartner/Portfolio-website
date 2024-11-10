@@ -115,7 +115,7 @@ function Skills({darkMode}) {
                     {/* Foreground Text */}
                     <h3 className="sectionHead text-[3.7rem] font-bold relative z-10 text-black whitespace-nowrap">S K I L L S</h3>
                 </div>
-                <p className="subtext text-gray-600">A collection of programming languages and technologies I have experience with.</p>
+                <p className="subtext font-semibold text-gray-600">A collection of programming languages and technologies I have experience with.</p>
                 <hr 
                     className='mt-6 mb-4 border-blue-500 border-2 mx-auto transition-all duration-300' 
                     style={{ width: `${10 + glowIntensity * 20}%` }}

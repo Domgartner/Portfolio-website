@@ -123,7 +123,7 @@ function Projects({darkMode}) {
                     {/* Foreground Text */}
                     <h3 className="sectionHead text-[3.3rem] font-bold relative z-10 text-black whitespace-nowrap">P R O J E C T S</h3>
                 </div>
-                <p className="subtext text-lg">A collection of projects I have completed or am currently working on.</p>
+                <p className="subtext font-semibold text-lg">A collection of projects I have completed or am currently working on.</p>
                 <p className="subtextSub text-sm text-gray-600">
                     Note: Only some projects are included here. View my{' '}
                     <a href="https://github.com/Domgartner" target="_blank" rel="noopener noreferrer" className="text-blue-500 underline hover:text-blue-700 transition duration-300 ease-in-out">
