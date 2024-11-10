@@ -78,7 +78,7 @@ function Home({darkMode}) {
         </h2>
       </div>
 
-      <div className="flex-grow hidden sm:block" style={{ width: '100%', height: '100%', zIndex: 0, marginLeft: '-300px' }}>
+      <div className="flex-grow hidden sm:block cursor-pointer" style={{ width: '100%', height: '100%', zIndex: 0, marginLeft: '-300px' }}>
         <Simulation 
           key={darkMode} // Add key prop to force re-render on darkMode change
           darkMode={darkMode}

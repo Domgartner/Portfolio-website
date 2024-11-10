@@ -11,11 +11,13 @@ import { Chrono } from "react-chrono";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
-function About() {
+function About({darkMode}) {
     const [filter, setFilter] = useState(localStorage.getItem('filter') || 'about');
     const [experienceData, setExperienceData] = useState([]);
     const [educationData, setEducationData] = useState([]);
     const [cer, setCer] = useState([]);
+    const [glowIntensity, setGlowIntensity] = useState(0);
+    const backgroundTextRef = useRef(null);
 
     const [containerWidth, setContainerWidth] = useState(0);
     const containerRef = useRef(null);
@@ -34,6 +36,27 @@ function About() {
         return () => {
             window.removeEventListener('resize', updateWidth);
         };
+    }, []);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (!backgroundTextRef.current) return;
+    
+            const rect = backgroundTextRef.current.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+            // Calculate the distance from the top of the viewport
+            const distanceFromTop = Math.max(0, rect.top); // Ensure it doesn't go below zero
+            const maxDistance = viewportHeight;
+            // Normalize the distance to a value between 0 and 1
+            const normalizedDistance = Math.min(distanceFromTop / maxDistance, 1);
+            // Invert it to make glow stronger when closer to the top
+            const intensity = 1 - normalizedDistance;
+            // Set the glow intensity based on the position
+            setGlowIntensity(intensity);
+        };
+        window.addEventListener("scroll", handleScroll);
+        handleScroll(); // Initial call to set the initial glow intensity
+        return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
 
@@ -57,9 +80,24 @@ function About() {
     return (
         <section className="p-16 w-screen" id="about">
             <div className="text-center mb-8">
-                <h3 className="sectionHead text-4xl font-bold text-gray-800">About</h3>
+                <div className="relative">
+                   {/* Background Text with Dynamic Glow */}
+                   <h3
+                        ref={backgroundTextRef}
+                        className="glow-effect text-[3.7rem] non-selectable font-bold text-gray-500 dark:text-blue-800 absolute top-9 left-1/2 transform -translate-x-1/2 -translate-y-1/2 whitespace-nowrap"
+                        style={{
+                            filter: `brightness(${0.5 + glowIntensity * 1.5})`, // Adjust the brightness based on scroll
+                            opacity: 0.2 + glowIntensity * 0.4, // Increase opacity as it scrolls to the top
+                            textShadow: darkMode ? `10px 15px 12px rgba(19, 88, 237, ${glowIntensity})` : `16px 22px 16px rgba(12, 12, 12, ${glowIntensity})`
+                        }}
+                    >
+                        A B O U T
+                    </h3>
+                    {/* Foreground Text */}
+                    <h3 className="sectionHead text-[3.7rem] font-bold relative z-10 text-black whitespace-nowrap">A B O U T</h3>
+                </div>
+                <hr className='mt-2 mb-4 border-blue-500 border-2 w-1/6 mx-auto'></hr>
             </div>
-
             {/* /* Filters at the top */}
             <div className="mb-4 text-center">
                 <div className="mt-4 relative inline-block">

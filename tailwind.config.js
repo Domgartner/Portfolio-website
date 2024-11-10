@@ -9,10 +9,11 @@ export default {
   theme: {
     extend: {
       maxWidth: {
-        'custom': '57rem', // Adjust the value as needed
-        'custom-team': '63rem', // Adjust the value as needed
+        'custom': '57rem',
+        'custom-team': '63rem',
       },
       screens: {
+        small: '767px',
         xs: '300px',
       },
       colors: {

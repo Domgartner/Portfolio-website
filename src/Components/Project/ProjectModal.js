@@ -29,7 +29,7 @@ function ProjectModal({ isVisible, closeModal, Name, images, specs, Description,
             onClick={closeModal} 
         >
                 <div
-                    className={`projModalbg relative bg-white ${isSmallScreen ? 'w-[96%]' : 'lg:w-4/5'} max-h-[95vh] shadow-lg p-6 border rounded-lg overflow-y-scroll transition-transform duration-300 ease-in-out transform ${
+                    className={`projModalbg relative bg-gray-100 ${isSmallScreen ? 'w-[96%]' : 'lg:w-4/5'} max-h-[95vh] shadow-lg p-6 border rounded-lg overflow-y-scroll transition-transform duration-300 ease-in-out transform ${
                         isVisible ? 'scale-100' : 'scale-95'
                     }`}
                     onClick={(e) => e.stopPropagation()} 
@@ -91,7 +91,7 @@ function ProjectModal({ isVisible, closeModal, Name, images, specs, Description,
                                                 )}
                                             </div>
                                             {/* Specs */}
-                                            <div className="specsCont mt-4 bg-gray-100 p-4 rounded-lg shadow-md w-full">
+                                            <div className="specsCont mt-4 bg-gray-200 p-4 rounded-lg shadow-md w-full">
                                                 <h3 className="specsTitle font-semibold text-xl text-center">Specs:</h3>
                                                 <div className="flex mb-2">
                                                     <div className="flex-1">
@@ -175,7 +175,7 @@ function ProjectModal({ isVisible, closeModal, Name, images, specs, Description,
                                                     </Swiper>
                                                 )}
 
-                                                <div className="specsCont mt-4 bg-gray-100 p-4 rounded-lg shadow-md min-h-[268px]">
+                                                <div className="specsCont mt-4 bg-gray-200 p-4 rounded-lg shadow-md min-h-[268px]">
                                                     <h3 className="specsTitle font-semibold text-xl mb-4 text-center">Specs:</h3>
                                                     <div className="flex mb-4">
                                                         <div className="flex-1">

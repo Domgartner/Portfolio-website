@@ -24,7 +24,7 @@
 		"Name": "Java",
 		"Description": "Skilled in building robust and scalable applications using Java.",
 		"icon": "faJava",
-        "color": "#e31414",
+        "color": "#ff0339",
 		"category": "languages"
 	},
 	{
@@ -80,7 +80,7 @@
 		"Name": "Unity",
 		"Description": "Experience in developing 2D and 3D games using Unity.",
 		"icon": "faUnity",
-        "color": "#000000",
+        "color": "#",
 		"category": "technologies"
 	},
     {
@@ -122,7 +122,7 @@
 		"Name": "Next.js",
         "Description": "Experienced in building modern web applications using Next.js.",
 		"icon": "faDesktop",
-        "color": "#000000",
+        "color": "#",
 		"category": "technologies"
 	},
 	{

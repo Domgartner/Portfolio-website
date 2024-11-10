@@ -1,7 +1,8 @@
 [
     {
         "name": "Museum Database",
-        "tags": ["Database", "terminal-based"],
+        "tags": ["Database"],
+        "Date": "Dec. 2022",
         "video": "https://www.youtube.com/embed/fe2ocVFF82o",
         "images": [
             "MuseumDatabase/museum_db_design.jpg",
@@ -17,6 +18,7 @@
     },
     {
         "name": "Animal Shelter Scheduler",
+        "Date": "Apr. 2023",
         "tags": ["Database", "GUI"],
         "video": "https://www.youtube.com/embed/DkKywwAUwP4",
         "images": [
@@ -33,6 +35,7 @@
     },
     {
         "name": "Data Structures and Algorithms",
+        "Date": "Apr. 2023",
         "video": "",
         "images": [
             "DSA/CDLL-ss.jpg",
@@ -49,6 +52,7 @@
     {
         "name": "Wordle Clone",
         "tags": ["Web"],
+        "Date": "Sept. 2023",
         "video": "",
         "images": [
             "Wordle/wordle-ss.jpg"
@@ -62,7 +66,8 @@
     },
     {
         "name": "Notes App",
-        "tags": ["Cloud", "IaC", "Auth", "Web"],
+        "tags": ["Cloud", "IaC", "Web"],
+        "Date": "Oct. 2023",
         "video": "",
         "images": [
             "Notes/lotion.jpg"
@@ -76,7 +81,8 @@
     },
     {
         "name": "Obituary Site",
-        "tags": ["Cloud", "API", "IaC", "Web"],
+        "tags": ["Cloud", "IaC", "Web"],
+        "Date": "Dec. 2023",
         "video": "",
         "images": [
             "Obituary/obituary-outline.jpg",
@@ -93,7 +99,8 @@
     },
     {
         "name": "CommUNIcate",
-        "tags": ["Cloud", "Auth", "IaC", "Web"],
+        "tags": ["Cloud", "IaC", "Web"],
+        "Date": "Apr. 2024",
         "video": "https://www.youtube.com/embed/11j8VmGNUJI",
         "images": [
             "CommUNIcate/Events.jpg",
@@ -112,6 +119,7 @@
     {
         "name": "Airline Application",
         "tags": ["Database", "GUI"],
+        "Date": "Dec. 2024",
         "video": "https://www.youtube.com/embed/byRK0fX2Bac",
         "images": [
             "AirlineApp/Admin.jpg",
@@ -138,6 +146,7 @@
     {
         "name": "Automated Code Review + Refactoring Tool",
         "tags": ["CI/CD"],
+        "Date": "",
         "video": "",
         "images": [
             "Misc/coming-soon.jpg"

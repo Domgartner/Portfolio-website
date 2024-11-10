@@ -8,13 +8,13 @@ function Skill({ Name, Description, icon, color, isAnimating }) {
 
     return (
         <div
-            className="skill relative flex flex-col items-center justify-center p-8 mt-6 mb-6 w-96"
+            className="skill relative flex flex-col items-center justify-center p-8 mt-6 mb-6 w-full"
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
         >
             <FontAwesomeIcon
                 icon={icon}
-                className={`text-6xl mb-6 transition-transform duration-500 
+                className={`text-7xl mb-6 transition-transform duration-500 
                     ${hovered ? 'transform scale-150 opacity-10' : 'transform scale-100 opacity-100'}
                     ${isAnimating ? 'transform scale-125 transition-all duration-300' : ''} 
                     dark:text-[var(--text-accent)]`}

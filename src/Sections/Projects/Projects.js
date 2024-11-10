@@ -17,11 +17,13 @@ import ObituarySiteDescription from './UniqueProjectContent/ObituarySite';
 import CommUNIcateDescription from './UniqueProjectContent/CommUNIcate';
 import AirlineDescription from './UniqueProjectContent/Airline';
 
-function Projects() {
+function Projects({darkMode}) {
     const [projectData] = useState(projectDataJson);
     const [isAnyProjectExpanded, setIsAnyProjectExpanded] = useState(false);
     const [slides, setSlides] = useState([]);
     const containerRef = useRef(null);
+    const [glowIntensity, setGlowIntensity] = useState(0);
+    const backgroundTextRef = useRef(null);
 
     const descriptions = {
         'Museum Database': MuseumDatabaseDescription,
@@ -37,6 +39,27 @@ function Projects() {
     const handleProjectClick = (isExpanded) => {
         setIsAnyProjectExpanded(isExpanded);
     };
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (!backgroundTextRef.current) return;
+    
+            const rect = backgroundTextRef.current.getBoundingClientRect();
+            const viewportHeight = window.innerHeight;
+            // Calculate the distance from the top of the viewport
+            const distanceFromTop = Math.max(0, rect.top); // Ensure it doesn't go below zero
+            const maxDistance = viewportHeight;
+            // Normalize the distance to a value between 0 and 1
+            const normalizedDistance = Math.min(distanceFromTop / maxDistance, 1);
+            // Invert it to make glow stronger when closer to the top
+            const intensity = 1 - normalizedDistance;
+            // Set the glow intensity based on the position
+            setGlowIntensity(intensity);
+        };
+        window.addEventListener("scroll", handleScroll);
+        handleScroll(); // Initial call to set the initial glow intensity
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     useEffect(() => {
         const calculateSlides = () => {
@@ -61,9 +84,24 @@ function Projects() {
     }, [projectData]);
 
     return (
-        <section className="mx-auto w-full p-4 pb-24 transition-colors duration-300 ease-in-out" id="projects" ref={containerRef}>
+        <section className="py-8 mx-auto w-full p-4 pb-24 transition-colors duration-300 ease-in-out" id="projects" ref={containerRef}>
             <div className="text-center mb-12">
-                <h3 className="sectionHead text-4xl font-bold mb-2">Projects</h3>
+                <div className="relative mb-2">
+                    {/* <!-- Background Text --> */}
+                    <h3
+                        ref={backgroundTextRef}
+                        className="glow-effect text-[3.3rem] non-selectable font-bold text-gray-500 dark:text-blue-800 absolute top-8 left-1/2 transform -translate-x-1/2 -translate-y-1/2 whitespace-nowrap"
+                        style={{
+                            filter: `brightness(${0.5 + glowIntensity * 1.5})`, // Adjust the brightness based on scroll
+                            opacity: 0.2 + glowIntensity * 0.4, // Increase opacity as it scrolls to the top
+                            textShadow: darkMode ? `10px 15px 12px rgba(19, 88, 237, ${glowIntensity})` : `16px 22px 16px rgba(12, 12, 12, ${glowIntensity})`
+                        }}
+                    >
+                        P R O J E C T S
+                    </h3>
+                    {/* Foreground Text */}
+                    <h3 className="sectionHead text-[3.3rem] font-bold relative z-10 text-black whitespace-nowrap">P R O J E C T S</h3>
+                </div>
                 <p className="subtext text-lg">A collection of projects I have completed or am currently working on.</p>
                 <p className="subtextSub text-sm text-gray-600">
                     Note: Only some projects are included here. View my{' '}
@@ -72,11 +110,12 @@ function Projects() {
                     </a>{' '}
                     for all my projects.
                 </p>
+                <hr className='mt-6 mb-4 border-blue-500 border-2 w-1/6 mx-auto'></hr>
             </div>
                 <Carousel 
                     showThumbs={false} 
                     autoPlay 
-                    interval={12000} 
+                    interval={20000} 
                     infiniteLoop 
                     showStatus={false}
                     swipeable
@@ -120,6 +159,7 @@ function Projects() {
                                     images={project.images.map(image => require(`../../Images/${image}`).default)} 
                                     specs={project.specs}
                                     tags={project.tags || null}
+                                    date={project.Date || null}
                                     link={project.link || null}
                                     isAnyProjectExpanded={isAnyProjectExpanded}
                                     onProjectClick={handleProjectClick}

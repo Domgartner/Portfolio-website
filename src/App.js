@@ -3,6 +3,7 @@ import Nav from './Components/Navbar/Nav';
 import Home from './Sections/Home/Home';
 import About from './Sections/About/About';
 import Skills from './Sections/Skills/Skills';
+import Break from './Sections/Break/Break';
 import Projects from './Sections/Projects/Projects';
 import Contact from './Sections/Contact/Contact';
 
@@ -27,6 +28,11 @@ function App() {
     }
   }, [darkMode]);
 
+  const scrollToHome = () => {
+    document.querySelector('.home').scrollIntoView({ behavior: 'smooth' });
+    setActiveSection('Home');
+  };
+
   return (
     <div className="App">
       <header>
@@ -45,13 +51,22 @@ function App() {
             />
         </div>
         <div className='bg-base'>
-          <About />
+          <About 
+           darkMode={darkMode}
+          />
         </div>
         <div className='bg-base'>
-          <Skills />
+          <Skills 
+          darkMode={darkMode}
+          />
+        </div>
+        <div>
+          <Break />
         </div>
         <div className='bg-base'>
-          <Projects />
+          <Projects 
+           darkMode={darkMode}
+          />
         </div>
         <div className='bg-base'>
           <Contact 
