@@ -8,7 +8,6 @@ import Projects from './Sections/Projects/Projects';
 import Contact from './Sections/Contact/Contact';
 import ScrollToTop from './Components/ScrollToTop';
 
-
 import React, { useState, useEffect, useRef } from 'react';
 
 function App() {
