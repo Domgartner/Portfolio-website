@@ -1,13 +1,7 @@
 .carousel .control-dots {
-
-    bottom: 100px; /* Adjust this value as needed */
-
+    bottom: 100px;
 }
 
-
-
 .carousel .control-arrow {
-
-    z-index: 1; /* Ensure arrows are above other elements */
-
+    z-index: 1;
 }

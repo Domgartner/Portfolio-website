@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import ReactDOM from 'react-dom';
 import ProjectModal from './ProjectModal';
 import '../../App.css';
-import './Project.css';
 
 function Project({ Name, Description, Video, images, specs, tags, date, link, isAnyProjectExpanded, onProjectClick }) {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -82,7 +82,9 @@ function Project({ Name, Description, Video, images, specs, tags, date, link, is
                     <h2 className={`projName font-semibold text-gray-800 ${Name.length > 22 ? 'text-[1.4rem]' : 'text-3xl'}`}>{Name}</h2>
                 </div>
                 {images && images.length > 0 && (
-                    <img src={images[0]} alt={Name} className={`w-full h-40 ${tags && tags.length > 0 ? 'max-h-[58%]' : 'max-h-40'} object-cover rounded-lg mb-4`} style={{ height: '200px' }} />
+                    <LazyLoadImage
+                    src={images[0]} alt={Name} className={`w-full h-40 ${tags && tags.length > 0 ? 'max-h-[58%]' : 'max-h-40'} object-cover rounded-lg mb-4`} style={{ height: '200px' }}
+                    />
                 )}
                 
                 {/* Tags and Date displayed on the same line */}

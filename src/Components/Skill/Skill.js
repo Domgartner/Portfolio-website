@@ -1,5 +1,4 @@
 import '../../App.css';
-import './Skill.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { useState } from 'react';
 

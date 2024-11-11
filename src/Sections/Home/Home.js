@@ -1,5 +1,4 @@
 import '../../App.css';
-import './Home.css';
 import React, { useEffect, useState } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,7 +10,8 @@ function Home({darkMode}) {
   const [index, setIndex] = useState(0);
   const [subIndex, setSubIndex] = useState(0);
   const [deleting, setDeleting] = useState(false);
-  const [blink, setBlink] = useState(true); // For blinking cursor
+  const [blink, setBlink] = useState(true);
+  const [showArrow, setShowArrow] = useState(false);
 
   const words = ["Developer", "Engineer", "Designer", "Creator", "Critical Thinker", "Problem Solver", "Programmer"];
 
@@ -31,10 +31,6 @@ function Home({darkMode}) {
 
     return () => clearTimeout(timeout);
   }, [subIndex, index, deleting]);
-
-
-  // Scroll down arrow visibility logic
-  const [showArrow, setShowArrow] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,7 +52,6 @@ function Home({darkMode}) {
     return () => clearInterval(blinkTimeout);
   }, []);
 
-  // Scroll to the "About" section
   const scrollToAbout = () => {
     const aboutSection = document.getElementById('about');
     if (aboutSection) {

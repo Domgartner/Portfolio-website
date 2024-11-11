@@ -1,11 +1,13 @@
 import '../../App.css';
-import './About.css';
 import pic from '../../Images/About/pic.jpg';
 import UofC from '../../Images/About/UofC.jpg';
 import resume from '../../Files/Resume.pdf';
 import AboutDesc from './AboutDesc';
 import AboutDataJson from './About.json';
+
 import React, { useEffect, useState, useRef } from 'react';
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 import { Chrono } from "react-chrono";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -27,7 +29,7 @@ function About({darkMode}) {
             ([entry]) => {
                 setIsInView(entry.isIntersecting);
             },
-            { threshold: 0.1 } // Adjust threshold to control how much of the element must be visible
+            { threshold: 0.1 } // threshold to control how much of the element must be visible
         );
 
         if (backgroundTextRef.current) {
@@ -58,10 +60,10 @@ function About({darkMode}) {
         };
 
         window.addEventListener("scroll", handleScroll);
-        handleScroll(); // Initial call to set the initial glow intensity
+        handleScroll();
 
         return () => window.removeEventListener("scroll", handleScroll);
-    }, [isInView]); // Only run when the section is in view
+    }, [isInView]);
 
     useEffect(() => {
         // Update the width initially and on window resize
@@ -158,9 +160,9 @@ function About({darkMode}) {
             {filter === 'about' && (
                 <div className="flex flex-col md:flex-row w-full items-center justify-center space-y-4 md:space-y-0 md:space-x-12">
                     <div className="w-full md:w-1/3">
-                        <img
+                        <LazyLoadImage
                             src={pic}
-                            alt="About"
+                            alt="Profile Picture"
                             className="rounded-xl shadow-lg w-full h-auto object-cover"
                         />
                     </div>

@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { LazyLoadImage } from "react-lazy-load-image-component";
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Mousewheel, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import './Project.css'
 
 function ProjectModal({ isVisible, closeModal, Name, images, specs, Description, link, Video, openImageInModal }) {
     const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -79,7 +81,7 @@ function ProjectModal({ isVisible, closeModal, Name, images, specs, Description,
                                                     >
                                                         {images.map((image, index) => (
                                                             <SwiperSlide key={index}>
-                                                                <img
+                                                                <LazyLoadImage
                                                                     src={image}
                                                                     alt={`${Name} ${index + 1}`}
                                                                     className="w-[98%] h-full rounded-lg cursor-pointer"

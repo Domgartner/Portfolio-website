@@ -19,7 +19,7 @@ function Skills({darkMode}) {
             ([entry]) => {
                 setIsInView(entry.isIntersecting);
             },
-            { threshold: 0.1 } // Adjust threshold to control how much of the element must be visible
+            { threshold: 0.1 } // threshold to control how much of the element must be visible
         );
 
         if (backgroundTextRef.current) {
@@ -53,7 +53,7 @@ function Skills({darkMode}) {
         handleScroll(); // Initial call to set the initial glow intensity
 
         return () => window.removeEventListener("scroll", handleScroll);
-    }, [isInView]); // Only run when the section is in view
+    }, [isInView]);
 
     useEffect(() => {
         setSkillsData(SkillsDataJson);
@@ -86,13 +86,12 @@ function Skills({darkMode}) {
     const filteredSkills = skillsData.filter(skill => skill.category === filter);
 
     const handleFilterChange = (newFilter) => {
-        setIsAnimating(true); // Start animation
+        setIsAnimating(true);
         setFilter(newFilter);
         setTimeout(() => setIsAnimating(false), 300); // Reset animation after duration
     };
 
     useEffect(() => {
-        // Save filter to localStorage whenever it changes
         localStorage.setItem('SkillsFilter', filter);
     }, [filter]);
 

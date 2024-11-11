@@ -31,7 +31,7 @@ function Projects({darkMode}) {
             ([entry]) => {
                 setIsInView(entry.isIntersecting);
             },
-            { threshold: 0.1 } // Adjust threshold to control how much of the element must be visible
+            { threshold: 0.1 } // threshold to control how much of the element must be visible
         );
 
         if (backgroundTextRef.current) {
@@ -62,10 +62,10 @@ function Projects({darkMode}) {
         };
 
         window.addEventListener("scroll", handleScroll);
-        handleScroll(); // Initial call to set the initial glow intensity
+        handleScroll();
 
         return () => window.removeEventListener("scroll", handleScroll);
-    }, [isInView]); // Only run when the section is in view
+    }, [isInView]);
 
     const descriptions = {
         'Museum Database': MuseumDatabaseDescription,
