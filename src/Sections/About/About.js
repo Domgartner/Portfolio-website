@@ -227,7 +227,7 @@ function About({darkMode}) {
                                         <img
                                             src={InstitutionLogo[edu.Institution]}
                                             alt={edu.Institution}
-                                            className="absolute inset-0 w-full h-full object-cover opacity-5 group-hover:opacity-100 transition-opacity duration-300"
+                                            className="absolute inset-0 w-full h-full object-cover opacity-[4%] group-hover:opacity-100 transition-opacity duration-300"
                                         />
                                         {/* Content Overlay */}
                                         <div className="relative z-10">
