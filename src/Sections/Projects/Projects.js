@@ -1,6 +1,8 @@
 import '../../App.css';
 import './Projects.css';
 
+import { motion, useScroll } from "framer-motion";
+
 import Project from '../../Components/Project/Project';
 import projectDataJson from './Projects.json';
 import React, { useState, useEffect, useRef } from 'react';
@@ -25,6 +27,7 @@ function Projects({darkMode}) {
     const [glowIntensity, setGlowIntensity] = useState(0);
     const backgroundTextRef = useRef(null);
     const [isInView, setIsInView] = useState(false);
+    const { scrollYProgress } = useScroll();
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -131,10 +134,17 @@ function Projects({darkMode}) {
                     </a>{' '}
                     for all my projects.
                 </p>
-                <hr 
-                    className='mt-6 mb-4 border-blue-500 border-2 mx-auto transition-all duration-300' 
-                    style={{ width: `${10 + glowIntensity * 20}%` }}
-                ></hr>
+                {/* Animated Line */}
+                <motion.div
+                    className="mt-6 mb-4 border-blue-500 mx-auto"
+                    style={{
+                        width: `${30 + glowIntensity * 16}%`,
+                        height: '4px',
+                        backgroundColor: '#3b82f6',
+                        scaleX: scrollYProgress
+                    }}
+                    transition={{ duration: 0.5 }}
+                />
             </div>
                 <Carousel 
                     showThumbs={false} 

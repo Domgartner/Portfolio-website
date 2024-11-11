@@ -9,6 +9,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 import { Chrono } from "react-chrono";
+import { motion, useScroll } from "framer-motion";
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
@@ -23,6 +24,7 @@ function About({darkMode}) {
     const [containerWidth, setContainerWidth] = useState(0);
     const containerRef = useRef(null);
     const [isInView, setIsInView] = useState(false);
+    const { scrollYProgress } = useScroll();
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -117,10 +119,17 @@ function About({darkMode}) {
                     {/* Foreground Text */}
                     <h3 className="sectionHead text-[3.7rem] font-bold relative z-10 text-black whitespace-nowrap">A B O U T</h3>
                 </div>
-                <hr 
-                    className='mt-2 mb-4 border-blue-500 border-2 mx-auto transition-all duration-300' 
-                    style={{ width: `${10 + glowIntensity * 20}%` }}
-                ></hr>
+                {/* Animated Line */}
+                <motion.div
+                    className="mt-6 mb-4 border-blue-500 mx-auto"
+                    style={{
+                        width: `${45 + glowIntensity * 55}%`,
+                        height: '4px',
+                        backgroundColor: '#3b82f6',
+                        scaleX: scrollYProgress
+                    }}
+                    transition={{ duration: 0.5 }}
+                />
             </div>
             {/* /* Filters at the top */}
             <div className="mb-4 text-center">

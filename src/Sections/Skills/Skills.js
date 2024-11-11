@@ -1,3 +1,4 @@
+import { motion, useScroll } from "framer-motion";
 import '../../App.css';
 import './Skills.css';
 import { faDatabase, faC, faFire, faBox, faCloud, faBullseye, faDiagramProject, faDesktop, faMicrochip, faCube, faVialCircleCheck} from '@fortawesome/free-solid-svg-icons';
@@ -7,6 +8,7 @@ import SkillsDataJson from './Skills.json';
 import React, { useEffect, useState, useRef } from 'react';
 
 function Skills({darkMode}) {
+    const { scrollYProgress } = useScroll();
     const [skillsData, setSkillsData] = useState([]);
     const [filter, setFilter] = useState(localStorage.getItem('SkillsFilter') || 'languages');
     const [isAnimating, setIsAnimating] = useState(false);
@@ -19,7 +21,7 @@ function Skills({darkMode}) {
             ([entry]) => {
                 setIsInView(entry.isIntersecting);
             },
-            { threshold: 0.1 } // threshold to control how much of the element must be visible
+            { threshold: 0.1 }
         );
 
         if (backgroundTextRef.current) {
@@ -50,7 +52,7 @@ function Skills({darkMode}) {
         };
 
         window.addEventListener("scroll", handleScroll);
-        handleScroll(); // Initial call to set the initial glow intensity
+        handleScroll();
 
         return () => window.removeEventListener("scroll", handleScroll);
     }, [isInView]);
@@ -88,7 +90,7 @@ function Skills({darkMode}) {
     const handleFilterChange = (newFilter) => {
         setIsAnimating(true);
         setFilter(newFilter);
-        setTimeout(() => setIsAnimating(false), 300); // Reset animation after duration
+        setTimeout(() => setIsAnimating(false), 300);
     };
 
     useEffect(() => {
@@ -99,7 +101,6 @@ function Skills({darkMode}) {
         <section className="p-4 transition-colors duration-300 ease-in-out" id='skills'>
             <div className="mb-4 text-center">
                 <div className="relative mb-2">
-                    {/* Background Text with Dynamic Glow */}
                     <h3
                         ref={backgroundTextRef}
                         className="glow-effect text-[3.7rem] non-selectable font-bold text-gray-500 dark:text-blue-800 absolute top-9 left-1/2 transform -translate-x-1/2 -translate-y-1/2 whitespace-nowrap"
@@ -111,14 +112,22 @@ function Skills({darkMode}) {
                     >
                         S K I L L S
                     </h3>
-                    {/* Foreground Text */}
                     <h3 className="sectionHead text-[3.7rem] font-bold relative z-10 text-black whitespace-nowrap">S K I L L S</h3>
                 </div>
                 <p className="subtext font-semibold text-gray-600">A collection of programming languages and technologies I have experience with.</p>
-                <hr 
-                    className='mt-6 mb-4 border-blue-500 border-2 mx-auto transition-all duration-300' 
-                    style={{ width: `${10 + glowIntensity * 20}%` }}
-                ></hr>
+
+                {/* Animated line */}
+                <motion.div
+                    className="mt-6 mb-4 border-blue-500 mx-auto"
+                    style={{
+                        width: `calc(30% + ${glowIntensity * 27}%)`,
+                        height: '4px',
+                        backgroundColor: '#3b82f6',
+                        scaleX: scrollYProgress
+                    }}
+                    transition={{ duration: 0.5 }}
+                />
+
                 <div className="mt-4 relative inline-block">
                     <div className="flex justify-center space-x-4 sm:space-x-12">
                         <div 
