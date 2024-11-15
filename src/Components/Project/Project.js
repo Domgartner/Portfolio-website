@@ -45,7 +45,7 @@ function Project({ Name, Description, Video, images, specs, tags, date, link, is
 
     const openImageInModal = (image) => {
         const modal = document.createElement('div');
-        modal.className = 'fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-75';
+        modal.className = 'fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-80';
         modal.onclick = () => document.body.removeChild(modal);
 
         const img = document.createElement('img');
@@ -69,9 +69,9 @@ function Project({ Name, Description, Video, images, specs, tags, date, link, is
 
     return (
         <>
-            {/* The carousel item (small view) */}
+            {/* /* The carousel item (small view) */ }
             <div
-                className="bg-white projectCont p-6 border rounded-lg shadow-xl mb-12 w-80 h-80 hover:shadow-2xl hover:scale-105 transition-transform duration-300 ease-in-out"
+                className="bg-white projectCont p-6 border-2 border-transparent rounded-lg shadow-xl mb-12 w-80 h-80 hover:shadow-blue-100 hover:scale-105 hover:border-blue-100 transition-transform duration-300 ease-in-out"
                 style={{ cursor: 'pointer' }}
                 onClick={!isExpanded && !isAnyProjectExpanded ? () => {
                     handleClick();

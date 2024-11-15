@@ -91,8 +91,9 @@
 .dark .projectCont {
   background-color: var(--bg-accent);
   border-color: var(--border);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease-in-out;
 }
+
 /* Project Name (Carousel view) */
 .dark .projName {
   color: var(--text);
@@ -193,7 +194,7 @@
 .dark .main #about,
 .dark .main #skills,
 .dark .main #projects {
-  background-color: var(--bg) !important;
+  background-color: var(--bg);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 

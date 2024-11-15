@@ -121,7 +121,7 @@ function About({darkMode}) {
                 </div>
                 {/* Animated Line */}
                 <motion.div
-                    className="mt-6 mb-4 border-blue-500 mx-auto"
+                    className="mt-2 mb-4 border-blue-500 mx-auto"
                     style={{
                         width: `${45 + glowIntensity * 55}%`,
                         height: '4px',
@@ -241,7 +241,7 @@ function About({darkMode}) {
                                             className="absolute inset-0 w-full h-full object-cover opacity-[4%] group-hover:opacity-100 transition-opacity duration-300"
                                         />
                                         {/* Content Overlay */}
-                                        <div className="relative z-10">
+                                        <div className="select-none pointer-events-none relative z-10">
                                             <h4 className="font-bold EducTitle InstitutionName text-xl font-semibold mb-2 transition-opacity duration-300 group-hover:opacity-0">
                                                 {edu.Institution}
                                             </h4>

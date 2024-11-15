@@ -14,7 +14,7 @@ function Skill({ Name, Description, icon, color, isAnimating }) {
             <FontAwesomeIcon
                 icon={icon}
                 className={`text-7xl mb-6 transition-transform duration-500 
-                    ${hovered ? 'transform scale-150 opacity-10' : 'transform scale-100 opacity-100'}
+                    ${hovered ? 'transform scale-150 opacity-15' : 'transform scale-100 opacity-100'}
                     ${isAnimating ? 'transform scale-125 transition-all duration-300' : ''} 
                     dark:text-[var(--text-accent)]`}
                 style={{

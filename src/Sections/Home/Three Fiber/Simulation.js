@@ -105,7 +105,7 @@ const FBOParticles = ({darkMode}) => {
 
 const SimScene = ({ darkMode }) => {
   return (
-    <Canvas camera={{ position: [1.5, 1.5, 1.12] }}>
+    <Canvas camera={{ position: [1.5, 1.5, 1.22] }}>
       <ambientLight intensity={0.5} />
       <FBOParticles darkMode={darkMode} />
       <OrbitControls enableZoom={false} />

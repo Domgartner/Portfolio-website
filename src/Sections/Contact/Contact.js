@@ -169,11 +169,11 @@ function Contact({ activeSection }) {
                             name="name"
                             value={formData.name}
                             onChange={handleChange}
-                            className={`formInput shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline peer ${errors.name && !formData.name ? 'border-red-500' : ''}`}
+                            className={`formInput shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline peer ${errors.name && !formData.name ? 'border-red-500 dark:border-red-500' : ''}`}
                         />
                         <label 
                             htmlFor="name" 
-                            className={`font-semibold formLabel absolute left-3 transition-all duration-200 ease-in-out bg-white px-1
+                            className={`font-semibold formLabel absolute left-3 transition-all duration-200 ease-in-out bg-white px-1 select-none pointer-events-none
                             ${formData.name ? '-top-2 text-xs' : 'top-3 text-sm'} peer-focus:-top-2 peer-focus:text-xs`}>
                             Name:
                         </label>
@@ -185,11 +185,11 @@ function Contact({ activeSection }) {
                             name="email"
                             value={formData.email}
                             onChange={handleChange}
-                            className={`formInput shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline peer ${errors.email && !formData.email ? 'border-red-500' : ''}`}
+                            className={`formInput shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline peer ${errors.email && !formData.email ? 'border-red-500 dark:border-red-500' : ''}`}
                         />
                         <label 
                             htmlFor="email" 
-                            className={`font-semibold formLabel absolute left-3 transition-all duration-200 ease-in-out bg-white px-1
+                            className={`font-semibold formLabel absolute left-3 transition-all duration-200 ease-in-out bg-white px-1 select-none pointer-events-none
                             ${formData.email ? '-top-2 text-xs' : 'top-3 text-sm'} peer-focus:-top-2 peer-focus:text-xs`}>
                             Email:
                         </label>
@@ -201,11 +201,11 @@ function Contact({ activeSection }) {
                             name="subject"
                             value={formData.subject}
                             onChange={handleChange}
-                            className={`formInput shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline peer ${errors.subject && !formData.subject ? 'border-red-500' : ''}`}
+                            className={`formInput shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline peer ${errors.subject && !formData.subject ? 'border-red-500 dark:border-red-500' : ''}`}
                         />
                         <label 
                             htmlFor="subject" 
-                            className={`font-semibold formLabel absolute left-3 transition-all duration-200 ease-in-out bg-white px-1
+                            className={`font-semibold formLabel absolute left-3 transition-all duration-200 ease-in-out bg-white px-1 select-none pointer-events-none
                             ${formData.subject ? '-top-2 text-xs' : 'top-3 text-sm'} peer-focus:-top-2 peer-focus:text-xs`}>
                             Subject:
                         </label>
@@ -217,7 +217,7 @@ function Contact({ activeSection }) {
                             placeholder='Message'
                             value={formData.message}
                             onChange={handleChange}
-                            className={`formInput shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32 peer ${errors.message && !formData.message ? 'border-red-500' : ''}`}
+                            className={`formInput shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline h-32 peer ${errors.message && !formData.message ? 'border-red-500 dark:border-red-500' : ''}`}
                         />
                     </div>
                     <div className="flex items-center">
